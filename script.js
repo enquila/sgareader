@@ -68,7 +68,7 @@ function check(){
     if (phase==0){
         resultElm.innerHTML='';
 
-        text=inputElm.value.split('');
+        text=inputElm.value.toLowerCase().split('');
         text.push(' ');
         compare=currentString.split('');
         for (var i=0; i < compare.length; i++){
