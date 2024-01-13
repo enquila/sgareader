@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>SGA Reader</title>
+</head>
+<body>
+    <p id="title">SGA Reading Practice<br><span class="offset">SGA Reading Practice</span></p>
+    <p class="license">Font by AFON 1V5</p>
+    <button onclick="changeType()" id="options">Statements</button>
+
+    <p id="accuracy">Accuracy: uncalculated</p>
+    <div id="sga"></div>
+
+    <input type="text" id="user">
+
+    <div class="res">
+        <p id="letter"></p>
+        <p onmouseleave="setLetter(' ')" id="result"></p>
+    </div>
+
+    <script src="words.js"></script>
+    <script src="sentences.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>

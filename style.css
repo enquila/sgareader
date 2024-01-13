@@ -1,0 +1,110 @@
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@300&family=Montserrat&display=swap');
+
+@font-face {
+    font-family: sga;
+    src: url(robotica-sga.ttf);
+}
+
+body,html{
+    background-color: rgb(23,21,23);
+    color: rgb(245,245,245);
+}
+
+#title{
+    font-family: 'IBM Plex Sans';
+    font-weight: bold;
+    font-size: 40px;
+    text-align: center;
+}
+
+.offset{
+    font-family: 'sga';
+    font-size: 30px;
+    text-align: center;
+}
+#sga{
+    display: flex;
+    margin: 0 auto;
+    width: 80%;
+    border: 1px solid rgb(255, 255, 255);
+    min-height: 55px;
+    height: fit-content;
+    margin-bottom: 5%;
+    font-family: 'sga';
+    font-size: 30px;
+    padding: 1%;
+    flex-wrap: wrap;
+}
+
+#sga p{
+    margin: 2%;
+}
+
+#user{
+    display: flex;
+    margin: 0 auto;
+    width: 80%;
+    border: 1px solid rgb(0,0,0);
+    min-height: 30px;
+    font-family: 'IBM Plex Sans';
+    font-size: 30px;
+}
+
+.correct{
+    color: rgb(56, 165, 56);
+}
+
+.incorrect{
+    color: rgb(165, 56, 56);
+}
+
+.missing{
+    color: rgb(214, 118, 28);
+}
+
+.res{
+    display: flex;
+    display: flex;
+    margin: 0 auto;
+    width: 80%;
+}
+
+#result{
+    font-family: 'IBM Plex Sans';
+    font-size: 40px;
+    margin-left: 10px;
+}
+
+#letter{
+    width: fit-content;
+    height: fit-content;
+    border:1px solid rgb(255,255,255);
+    font-family: 'sga';
+    width: 50px;
+    text-align: center;
+    min-height: 55px;
+    font-size: 40px;
+}
+
+#options{
+    border:0.5px dashed rgb(255,255,255);
+    background: none;
+    font-family: 'IBM Plex Sans';
+    font-size: 30px;
+    color: rgb(255,255,255);
+    margin: 3%;
+    cursor: pointer;
+}
+
+#accuracy{
+    font-family: 'IBM Plex Sans';
+    font-size: 30px;
+    text-align: center;
+    color: rgb(255,255,255);
+}
+
+.license{
+    font-family: 'IBM Plex Sans';
+    font-size: 20px;
+    text-align: center;
+}
