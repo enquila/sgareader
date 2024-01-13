@@ -68,7 +68,7 @@ function check(){
     if (phase==0){
         resultElm.innerHTML='';
 
-        text=inputElm.value.toLowerCase().split('');
+        text=inputElm.value.split('');
         text.push(' ');
         compare=currentString.split('');
         for (var i=0; i < compare.length; i++){
@@ -76,7 +76,7 @@ function check(){
                 resultElm.innerHTML+='<span style="width: 10px"> </span>';
             }else{
                span='<span class="';
-               if (compare[i]==text[i]){
+               if (compare[i].toLowerCase()==text[i].toLowerCase()){
                     span+='correct"';
                     totalCorrect+=1;
                 }else{
