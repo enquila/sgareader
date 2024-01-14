@@ -78,7 +78,7 @@ body,html{
 #letter{
     width: fit-content;
     height: fit-content;
-    border:1px solid rgb(255,255,255);
+    border:1px solid rgb(255, 255, 255);
     font-family: 'sga';
     width: 50px;
     text-align: center;
@@ -86,7 +86,7 @@ body,html{
     font-size: 40px;
 }
 
-#options{
+.button{
     border:0.5px dashed rgb(255,255,255);
     background: none;
     font-family: 'IBM Plex Sans';
@@ -107,4 +107,24 @@ body,html{
     font-family: 'IBM Plex Sans';
     font-size: 20px;
     text-align: center;
+}
+
+.chart{
+    display: grid;
+    margin: 0 auto;
+    grid-template-columns: repeat(2,auto);
+    font-family: 'IBM Plex Sans';
+    width: fit-content;
+    font-size: 30px;
+    grid-gap: 15px;
+    margin-bottom: 5%;
+}
+
+.chart canvas{
+    border: 3px dashed rgb(255,255,255);
+}
+
+.subtext{
+    font-size: smaller;
+    color: rgb(215, 215, 215);
 }

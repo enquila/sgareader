@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/style.css">
+    <title>SGA Stats</title>
+</head>
+<body>
+    <p id="title">SGA Stats<br><span class="offset">SGA Stats</span></p>
+    <p class="license">Font by AFON 1V5</p>
+    <button onclick="window.open('/','_self')" class="button" id="switch">Reading Test</button>
+
+    <div class="chart">
+        <p>
+            Accuracy
+            <br>
+            <span id="accuracySubtext" class="subtext"></span>
+        </p>
+        <canvas id="accuracyChart" style="width:100%;max-width:700px"></canvas>
+    </div>
+
+    <div class="chart">
+        <p>Letters practiced<br><span id="practiceSubtext" class="subtext"></span></p>
+        <canvas id="practiceChart" style="width:100%;max-width:700px"></canvas>
+    </div>
+
+    <button onclick="saveArray('data',null); window.open('/stats/','_self')" style="color: rgb(194, 0, 0)"class="button">Clear All Data (Irreversible)</button>
+    <script
+    src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.js">
+    </script>
+    <script src="/storage.js"></script>
+    <script src="stats.js"></script>
+</body>
+</html>

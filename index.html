@@ -9,7 +9,8 @@
 <body>
     <p id="title">SGA Reading Practice<br><span class="offset">SGA Reading Practice</span></p>
     <p class="license">Font by AFON 1V5</p>
-    <button onclick="changeType()" id="options">Statements</button>
+    <button onclick="window.open('/stats/','_self')" class="button" id="switch">Stats</button>
+    <button onclick="changeType()" class="button" id="options">Statements</button>
 
     <p id="accuracy">Accuracy: uncalculated</p>
     <div id="sga"></div>
@@ -21,6 +22,7 @@
         <p onmouseleave="setLetter(' ')" id="result"></p>
     </div>
 
+    <script src="/storage.js"></script>
     <script src="words.js"></script>
     <script src="sentences.js"></script>
     <script src="script.js"></script>

@@ -13,11 +13,30 @@ phase=1;
 1 seeing result
 */
 
-accuracy=0;
-totalLetters=0;
-totalCorrect=0;
+currentString="";
 
-currentString=""
+data=loadArray("data");
+
+var date = new Date();
+const filename=`${date.getFullYear()}-${date.getMonth()+1}-${date.getDate()}`;
+
+if (data){
+    if (!(data[data.length-1][0]==filename)){
+        data.push([filename,0,0,0]);
+    }
+}else{
+    data=[];
+    data.push([filename,0,0,0]);
+}
+
+const index = data.length-1;
+
+accuracy=data[index][1];
+totalLetters=data[index][2];
+totalCorrect=data[index][3];
+
+accuracy=Math.floor((totalCorrect/totalLetters)*100);
+accuracyElm.textContent=`Accuracy: ${accuracy}% (${totalCorrect}/${totalLetters})`;
 
 function randomWord(){
     word=words[Math.floor(Math.random()*words.length)];
@@ -75,16 +94,20 @@ function check(){
             if (compare[i]==" "){
                 resultElm.innerHTML+='<span style="width: 10px"> </span>';
             }else{
-               span='<span class="';
-               if (compare[i].toLowerCase()==text[i].toLowerCase()){
-                    span+='correct"';
-                    totalCorrect+=1;
-                }else{
-                    if (text[i] && i != text.length-1){
-                        span+='incorrect"';
+                span='<span class="';
+                if (text[i]){
+                    if (compare[i].toLowerCase()==text[i].toLowerCase()){
+                        span+='correct"';
+                        totalCorrect+=1;
                     }else{
-                        span+='missing"';
+                        if (text[i] && i != text.length-1){
+                            span+='incorrect"';
+                        }else{
+                            span+='missing"';
+                        }
                     }
+                }else{
+                    span+='missing"';
                 }
                 totalLetters+=1;
                 span+=`onmouseover="setLetter('${compare[i]}')" >${compare[i]}</span>`
@@ -92,9 +115,14 @@ function check(){
             }
         }
         phase=1;
-
-        accuracy=Math.floor((totalCorrect/totalLetters)*100)
+        
+        accuracy=Math.floor((totalCorrect/totalLetters)*100);
         accuracyElm.textContent=`Accuracy: ${accuracy}% (${totalCorrect}/${totalLetters})`;
+        
+        data[index][1]=accuracy;
+        data[index][2]=totalLetters;
+        data[index][3]=totalCorrect;
+        saveArray("data",data);
     }else{
         phase=0;
         resultElm.innerHTML='';
